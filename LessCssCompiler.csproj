@@ -123,8 +123,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="lessc.cmd" />
     <None Include="packages.config" />
+    <None Include="README" />
     <None Include="source.extension.vsixmanifest" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +150,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="license.txt" />
+    <Content Include="preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <EmbeddedResource Include="less.js" />
     <EmbeddedResource Include="lessc.wsf" />
     <Content Include="logo.png">

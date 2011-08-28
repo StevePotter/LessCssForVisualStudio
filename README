@@ -1,1 +1,10 @@
-oh yeah!
+I love LessCss (lesscss.org).  It gives incremental improvements on css that I've wanted for years.  When it came out I installed it using the regular ol way, with the .less and .js file.  This caused some problems - slower loading, plus it interfered with our CDN.  So rather than make clients parse .less files, I decided to do it at build time.  I created a pre-build event in VS but that sucked because each time I changed my .less file, I had to rebuild the project.  I wanted to just be able to save the file and refresh my browser, like I do with css.  This project does exactly that.  It takes a .less file and creates a .css from it each time you change the .less file.  
+
+It's super simple.  Just select your .less file(s) in the Solution Explorer, and in the Properties window change Custom Tool to "LessCss".  Edit the less and the css is generated behind the scenes.  If there are problems, they will be detailed in the Error List window.
+
+If you have existing css files and want to use less, it's easy:
+1)  Change the extension on your css files to ".less"
+2)  Select the file(s) in properties window. 
+3)  Set the Custom Tool in Properties window to "LessCss".
+4)  Reap the benefits of less!
+The beauty here is that it will generate the same css file names as you had before.  So it shouldn't affect your app at all.  

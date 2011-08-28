@@ -77,24 +77,31 @@ namespace Microsoft.Samples.VisualStudio.GeneratorSample
         {
             try
             {
+                //put the files in the same folder as the input so the @import still will work
                 var lessJs = ExtractEmbeddedResource("less.js");
-                ExtractEmbeddedResource("lessc.wsf");
-                var lessCmd = ExtractEmbeddedResource("lessc.cmd");
+                var lessHost = ExtractEmbeddedResource("lessc.wsf");
                 var outputCss = Path.GetTempFileName() + ".css";
                 string errors;
-                using (Process process = System.Diagnostics.Process.Start(new ProcessStartInfo(lessCmd, "\"" + InputFilePath + "\" \"" + outputCss + "\"" )
+                using (Process process = System.Diagnostics.Process.Start(new ProcessStartInfo("cscript.exe", string.Format("//nologo \"{0}\" \"{1}\" \"{2}\"", lessHost.Item1, InputFilePath, outputCss))
                 {
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardError = true,
                     RedirectStandardOutput = true,
-                    WorkingDirectory = Path.GetDirectoryName(lessCmd),
+                    WorkingDirectory = Path.GetDirectoryName(lessJs.Item1),
                 }))
                 {
                     errors = process.StandardError.ReadToEnd();
                     process.WaitForExit();
                     process.Close();
                 }
+
+                //clean up
+                if (!lessJs.Item2)
+                    File.Delete(lessJs.Item1);
+                if (!lessHost.Item2)
+                    File.Delete(lessHost.Item1);
+
                     if ( !string.IsNullOrWhiteSpace(errors))
                     {
                         GeneratorError(0, errors, 0, 0);
@@ -115,9 +122,9 @@ namespace Microsoft.Samples.VisualStudio.GeneratorSample
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        private string ExtractEmbeddedResource(string fileName)
+        private Tuple<string,bool> ExtractEmbeddedResource(string fileName)
         {
-            var path = Path.Combine(ExtensionFolder, fileName);
+            var path = Path.Combine(Path.GetDirectoryName(InputFilePath), fileName);
             if (!File.Exists(fileName))
             {
                 var resourceName = "LessCssCompiler." + fileName;
@@ -127,8 +134,12 @@ namespace Microsoft.Samples.VisualStudio.GeneratorSample
                 {
                     CopyStream(input, output);
                 }
+                return new Tuple<string, bool>(path, false);//second arg is whether the file preexisted.  
             }
-            return path;
+            else
+            {
+                return new Tuple<string, bool>(path, true);                
+            }
         }
 
         /// <summary>

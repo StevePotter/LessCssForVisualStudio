@@ -1,0 +1,389 @@
+/**********************************************/
+/* Page-specific css for the Takeoff external (aka Presales) site.  
+/**********************************************/
+
+/* lesscss.org mixins
+**********************************************/
+
+.clearfix()
+{
+	&:after { 
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+}
+
+.rounded-corners (@radius) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.box-shadow (@arguments) {
+  box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+}
+
+/* /
+**********************************************/
+body.root-index > header {
+  background-image: url("../img/external/header-bg-home.jpg");
+  clear: both;
+  height: 400px;
+}
+body.root-index #main-content {
+  background-image: url("../img/external/main-bg-home.jpg");
+}
+body.root-index #quotes {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  font-size: 18px;
+  width: 440px;
+  margin-left: 90px;
+  text-align: center;
+  background-image: url(../img/quote-bg-home.jpg);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  float: left;
+}
+body.root-index #quotes li {
+  display: none;
+}
+/* avoids jumpiness during page load */
+body.root-index #quotes li:first-child {
+  display: list-item;
+}
+body.root-index #quotes p {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+body.root-index #quotes .author {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-left: 50px;
+}
+body.root-index #call-to-action {
+  float: left;
+  margin: 70px 0 0 40px;
+  padding: 0;
+}
+body.root-index #call-to-action li {
+  display: block;
+  float: left;
+  list-style: none outside none;
+}
+body.root-index #call-to-action .button-big {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 20px;
+  padding: 0;
+  text-align: center;
+  width: 210px;
+}
+body.root-index #main-content section h1 {
+  color: #004D66;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+body.root-index #highlights {
+  clear: both;
+  margin: 0 90px 60px;
+  overflow: hidden;
+}
+body.root-index #highlights h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+body.root-index #highlights ul {
+  margin: 0;
+}
+body.root-index #highlights li {
+  display: block;
+  float: left;
+  list-style: none outside none;
+  margin-left: 40px;
+  width: 200px;
+}
+body.root-index #highlights li:first-child {
+  margin-left: 0;
+}
+body.root-index #highlights .popup-img {
+  float: none;
+  height: 140px;
+  margin: 0 0 20px;
+}
+body.root-index #comparison {
+  clear: both;
+  margin: 0 90px 60px 90px;
+}
+/* hides the tab panes for the comparisons */
+body.root-index #comparison table {
+  display: none;
+}
+body.root-index #comparison h1 {
+  display: inline;
+  margin-bottom: 0;
+  margin-right: 40px;
+}
+body.root-index #comparison .nav-horizontal {
+  position: relative;
+  top: -4px;
+}
+body.root-index #comparison > ul {
+  display: inline;
+  margin: 0;
+}
+body.root-index #comparison > ul li {
+  display: inline;
+  line-height: 1em;
+}
+body.root-index #comparison > ul a:link, body.root-index #comparison > ul a:visited, body.root-index #comparison > ul a:active {
+  .rounded-corners(3px);
+  color: #333333;
+  font-size: 14px;
+  padding: 4px 10px;
+  text-decoration: none;
+}
+body.root-index #comparison > ul a.selected {
+  background-image: url("../img/button-bg.png");
+  box-shadow:0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
+  color: #004D66;
+}
+body.root-index #comparison table {
+  margin-left: -40px;
+  width: 960px;
+}
+body.root-index #comparison td {
+  font-size: 14px;
+  text-align: center;
+}
+body.root-index #comparison td:first-child {
+  padding: 13px 40px;
+  text-align: left;
+}
+body.root-index #comparison tr:nth-child(2n+1) {
+  background-image: url("../img/tr-bg.png");
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+body.root-index #comparison thead tr {
+  background-image: none !important;
+  border: medium none !important;
+}
+body.root-index #comparison th {
+  font-weight: 600;
+  padding: 13px 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+body.root-index #comparison td img {
+  position: relative;
+  top: 5px;
+}
+/* /demo
+**********************************************/
+body.root-tour #feature-security img {
+  margin-top: -60px;
+}
+/* /demo
+**********************************************/
+
+body.demo-index #main-content form {
+  margin: 20px;
+}
+
+body.demo-index #main-content form div.buttons {
+  text-align: center;
+}
+/* /signup
+*************************************************************/
+body.signup-index > header {
+  background-image: url(../img/header-bg.jpg);
+  height: 200px;
+}
+body.signup-index > header h1 {
+  font-size: 42px;
+  text-align: center;
+  float: none;
+  margin: 40px 0 0 0;
+}
+body.signup-index #main-content {
+  background-image: none;
+  overflow: visible;
+}
+body.signup-index .price-col, .price-col {
+  width: 300px;
+  background-image: url(../img/pricing-col-bg.png);
+  background-repeat: no-repeat;
+  min-height: 500px;
+  margin-top: -60px;
+  margin-left: 20px;
+  float: left;
+}
+body.signup-index .price-col:first-child {
+  margin-left: 80px;
+}
+body.signup-index .price-col.value {
+  background-image: url(../img/pricing-col-bg-feature.png);
+  margin-top: -90px;
+}
+body.signup-index .price-col header {
+  width: auto;
+  height: auto;
+  background: none;
+  text-align: center;
+}
+body.signup-index > header {
+  background-image: url(../img/header-bg.jpg);
+  height: 200px;
+}
+body.signup-index .price-col header h1 {
+  font-size: 32px;
+  color: #004d66;
+  text-shadow: 0 1px 0 #fff;
+  margin-top: 29px;
+}
+body.signup-index .price-col.value header h1 {
+  margin-top: 59px;
+  position: relative;
+  top: -15px;
+}
+body.signup-index .price-col.value header p {
+  position: relative;
+  top: -15px;
+}
+body.signup-index .price-col header p {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-style: italic;
+  margin-top: 5px;
+}
+body.signup-index .price-col strong {
+  font-size: 24px;
+  font-weight: 600;
+  color: #004d66;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+body.signup-index .price-col strong sup {
+  font-size: 14px;
+  top: auto;
+  vertical-align: super;
+}
+body.signup-index .price-col ul {
+  padding: 20px 40px;
+  margin: 10px 30px;
+  background-color: #efeff2;
+  .rounded-corners(7px);
+  -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+body.signup-index .price-col li {
+  list-style: none;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  margin-top: 10px;
+  clear: both;
+  overflow: hidden;
+}
+body.signup-index .price-col li:first-child {
+  margin-top: 0;
+}
+body.signup-index .price-col li em {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #004d66;
+  width: 40px;
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  .rounded-corners(20px);  
+  background-color: #e1ebef;
+  background-image: url(../img/pricing-em-bg.png);
+  -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+body.signup-index .price-col a.button-big {
+  width: 190px;
+  margin-top: 20px;
+  margin-left: 30px;
+  display: block;
+  text-align: center;
+}
+body.signup-index  #faqs {
+  clear: both;
+}
+/* /signup/account
+*************************************************************/
+body.signup-account #SignupSource {
+  width: 312px;
+}
+/* /signup/subscribe (includes the success page, which has additional class .subscribe-success
+*************************************************************/
+body.subscribe-success #main-content p {
+  margin-bottom: 20px;
+}
+body.subscribe-success #button-container {
+  text-align: center;
+  margin: 20px;
+}
+/* this contains the different credit card types accepted.  Goes underneath the card number input field */
+body.signup-subscribe #cards-accepted {
+  margin-left: 205px;
+  font-size: 85%;
+}
+body.signup-subscribe input#PostalCode, body.signup-subscribe input#CreditCardVerificationCode {
+  width: 100px !important;
+  /*alternative was super long css selector.  remove this in firebug and see how it gets overridden.  annoying... */
+}
+
+
+/* login page
+**********************************************/
+body.account-login form
+{
+	#remember-me-group
+	{
+		input
+		{
+			margin-left: 210px;
+		}
+		label
+		{
+			width: auto !important;
+		}
+	}
+
+	#password-group
+	{
+		margin-bottom: 0px; /* so the "remember me" box will be closer to the box (forgot password link adds vertical space and makes it look funnyu ) */
+		div
+		{
+			margin-top: 2px;
+			text-align: right;
+		}
+		/* password reset link */
+		a 
+		{
+			font-size: 85%;
+		}
+	}
+	div.buttons span
+	{
+		margin-left: 10px;
+	}
+}

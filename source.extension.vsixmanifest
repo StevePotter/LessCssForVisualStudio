@@ -7,6 +7,7 @@
     <Description xml:space="preserve">Simplifies building and testing of LessCss, by adding a custom tool to generate .css files from .less files when they change.  It's the easiest way to introduce LessCss into your VS.NET projects!</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>https://github.com/StevePotter/LessCssForVisualStudio/wiki</MoreInfoUrl>
+    <License>license.txt</License>
     <GettingStartedGuide>https://github.com/StevePotter/LessCssForVisualStudio/wiki</GettingStartedGuide>
     <Icon>logo.png</Icon>
     <PreviewImage>preview.png</PreviewImage>

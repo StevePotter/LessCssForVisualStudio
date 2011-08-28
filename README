@@ -1,5 +1,8 @@
 I love LessCss (lesscss.org).  It gives incremental improvements on css that I've wanted for years.  When it came out I installed it using the regular ol way, with the .less and .js file.  This caused some problems - slower loading, plus it interfered with our CDN.  So rather than make clients parse .less files, I decided to do it at build time.  I created a pre-build event in VS but that sucked because each time I changed my .less file, I had to rebuild the project.  I wanted to just be able to save the file and refresh my browser, like I do with css.  This project does exactly that.  It takes a .less file and creates a .css from it each time you change the .less file.  
 
+See it in action at http://screencast.com/t/eNvT0FI2WAni.
+
+GETTING STARTED:
 It's super simple.  Just select your .less file(s) in the Solution Explorer, and in the Properties window change Custom Tool to "LessCss".  Edit the less and the css is generated behind the scenes.  If there are problems, they will be detailed in the Error List window.
 
 If you have existing css files and want to use less, it's easy:
@@ -8,3 +11,11 @@ If you have existing css files and want to use less, it's easy:
 3)  Set the Custom Tool in Properties window to "LessCss".
 4)  Reap the benefits of less!
 The beauty here is that it will generate the same css file names as you had before.  So it shouldn't affect your app at all.  
+
+THANKS TO:
+This simple extension leverages the work from the following awesome peeps:
+1) lesscss themselves.  Extension uses the latest source less.js file.  Lesscss rules.  Thank you all for your great work and for the wonderful lesscss.org site.
+2) Duncan Smart.  He made it possible to use less.js from the Windows command line, which this addin uses.  See it at http://blog.dotsmart.net/2010/11/26/running-the-less-js-command-line-compiler-on-windows/.  Thanks buddy!
+3) Microsoft for their single file VS generator sample, which was instrumental in making this addin.  http://code.msdn.microsoft.com/Single-File-Generator-94d856d4
+
+About dotless.  You may wonder why I didn't use the http://www.dotlesscss.org/ lesscss compiler.  At first I did.  One thing that frustrated me was I kept running into bugs with dotless that didn't exist in less.jss.  Also I was concerned that if the dotless project fizzled at all, it would lag way behind the official less.js compiler.  I found Duncan Smart's project that lets you use the less.js file itself from the command line.  So it turns out I didn't need dotless at all.  
